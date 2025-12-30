@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Form -->
+    <div class="form">
+      <h2>Resume Details</h2>
+
+      <input id="name" placeholder="Full Name">
+      <input id="role" placeholder="Job Title">
+      <textarea id="summary" placeholder="Professional Summary"></textarea>
+      <input id="skills" placeholder="Skills (comma separated)">
+      <button onclick="saveData()">Save</button>
+    </div>
+
+    <!-- Preview -->
+    <div class="resume">
+      <h1 id="pName">Your Name</h1>
+      <h3 id="pRole">Your Role</h3>
+      <p id="pSummary">Your professional summary appears here.</p>
+
+      <h4>Skills</h4>
+      <ul id="pSkills"></ul>
+
+      <button onclick="window.print()">🖨️ Print / Save PDF</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
