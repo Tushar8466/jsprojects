@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 50px;
+}
+
+/* Modal Background */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Modal Box */
+.modal-content {
+  background: white;
+  width: 400px;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 6px;
+  position: relative;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  background: #eee;
+}
+
+.tab-btn.active {
+  background: #333;
+  color: white;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
