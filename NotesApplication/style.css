@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: 900px;
+  max-width: 95%;
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #667eea;
+  color: white;
+  cursor: pointer;
+}
+
+#search {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.note {
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.note textarea {
+  border: none;
+  resize: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  flex: 1;
+}
+
+.note .actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.note button {
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-size: 14px;
+}
+
+.delete {
+  color: #e74c3c;
+}
