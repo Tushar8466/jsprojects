@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Filter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Product Filter & Search</h2>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="Search products...">
+
+    <select id="category">
+      <option value="all">All Categories</option>
+      <option value="electronics">Electronics</option>
+      <option value="fashion">Fashion</option>
+      <option value="books">Books</option>
+    </select>
+
+    <select id="price">
+      <option value="all">All Prices</option>
+      <option value="low">Below ₹500</option>
+      <option value="mid">₹500 – ₹2000</option>
+      <option value="high">Above ₹2000</option>
+    </select>
+  </div>
+
+  <div class="products" id="productList"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
