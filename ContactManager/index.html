@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>📇 Contact Manager</h1>
+
+    <div class="top-bar">
+      <input type="text" id="search" placeholder="Search contacts...">
+      <button id="addBtn">+ Add</button>
+    </div>
+
+    <div class="list" id="contactList"></div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <h2 id="modalTitle">Add Contact</h2>
+
+      <input type="text" id="name" placeholder="Full Name">
+      <input type="text" id="phone" placeholder="Phone Number">
+      <input type="email" id="email" placeholder="Email Address">
+
+      <div class="modal-actions">
+        <button id="saveBtn">Save</button>
+        <button class="cancel" onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
