@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #111;
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.scrollbar {
+    width: 100%;
+    /* Fixed height for the strip */
+    height: 12vw;
+    max-height: 180px;
+    min-height: 100px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    background: #111;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* 
+   We need a wrapper that moves. 
+   Javascript will wrap the content in a .scroller-inner 
+*/
+.scroller-inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    will-change: transform;
+}
+
+/* The repeating unit */
+.scroll-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* Ensure item has width relative to viewport or content */
+    padding: 0 4vw;
+    position: relative;
+    flex-shrink: 0;
+    /* Don't shrink */
+}
+
+/* TEXT STYLING */
+.scroll-item h1 {
+    font-size: 8vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 2px #666;
+    /* Hollow text effect */
+    margin: 0;
+    line-height: 1;
+    transition: all 0.4s ease;
+    /* Optional: Filled on hover? No, user wants image. */
+}
+
+/* Hover state for text - fades out or gets covered */
+.scrollbar:hover .scroll-item h1 {
+    opacity: 0.1;
+    /* Fade out text so image is clearer, or Keep it? */
+    color: #fff;
+    /* Maybe fill it before it vanishes? Let's just fade it. */
+    -webkit-text-stroke: 0px transparent;
+}
+
+/* IMAGE STYLING */
+.scroll-item .place-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+    /* Above text */
+    pointer-events: none;
+    filter: grayscale(0.2) brightness(0.8);
+}
+
+.scrollbar:hover .scroll-item .place-img {
+    opacity: 1;
+}
+
+/* ANIMATION */
+@keyframes scroll {
+    to {
+        transform: translate(calc(-50%));
+    }
+}
+
+.scroller-inner[data-animated="true"] {
+    animation: scroll var(--duration, 20s) linear infinite;
+}
+
+.scroller-inner[data-direction="right"] {
+    animation-direction: reverse;
+}
+
